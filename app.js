@@ -94,7 +94,7 @@ const getMeterValue = async (id) => {
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 getMetersValue(metersIdList)
 
-cron.schedule('*/1 * * * *', () => {
+cron.schedule('*/2 * * * *', () => {
     const now = dayjs(new Date).unix()
     sensor.datetime = now
     eventBus.emit('logger', sensor)
