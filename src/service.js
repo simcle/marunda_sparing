@@ -15,9 +15,9 @@ eventBus.on('logger', (data) => {
         debit: debit,
         timestamp: datetime
     }
-    // axios.post(api_url_ndp, payload, {
-    //     headers: {
-    //         Authorization: `Bearer ${token}`
-    //     }
-    // })
+    axios.post(api_url_ndp, payload, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
 })

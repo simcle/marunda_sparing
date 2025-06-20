@@ -7,7 +7,7 @@ import eventBus from "./eventBus.js";
 import './src/service.js'
 import './src/sparing.js'
 
-const ref = db.ref('demo/marunda/modbus')
+const ref = db.ref('dwitama/marunda/modbus')
 let sensor = {
     datetime: null,
     pH: 0,
