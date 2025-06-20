@@ -21,7 +21,7 @@ let sensor = {
 const modbusChange = onChange(sensor, () => {
     ref.set({
         datetime: sensor.datetime,
-        pH: sensor.pH,
+        ph: sensor.pH,
         tmp: sensor.tmp,
         cod: sensor.cod,
         tss: sensor.tss,
