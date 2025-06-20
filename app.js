@@ -57,7 +57,6 @@ const getMetersValue = async (meters) => {
 
 const getMeterValue = async (id) => {
     try {
-        const now = dayjs(new Date).unix()
         client.setID(id)
         if(id == 1) {
             try {
@@ -86,7 +85,6 @@ const getMeterValue = async (id) => {
                 console.log('muc: '+error)
             }
         }
-        modbusChange.datetime = now
         return modbusChange
     } catch (error) {
         console.log('error: ' +error)
@@ -97,6 +95,8 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 getMetersValue(metersIdList)
 
 cron.schedule('*/1 * * * *', () => {
+    const now = dayjs(new Date).unix()
+    sensor.datetime = now
     eventBus.emit('logger', sensor)
     // eventBus.emit('sparing', sensor)
 })
