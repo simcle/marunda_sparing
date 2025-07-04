@@ -5,7 +5,7 @@ import cron from 'node-cron'
 import { insertLogger, getLogger, deleteLoggerById, deleteLoggerMany } from "./controller.js";
 
 const mode = 'hourly' // testing minute hourly
-const uid = "ABC3fe3fa2366e1acce66XYZ"
+const uid = "65489c6e4649964b989523dc"
 
 
 eventBus.on('sparing', (data) => {
