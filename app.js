@@ -98,5 +98,5 @@ cron.schedule('*/2 * * * *', () => {
     const now = dayjs(new Date).unix()
     sensor.datetime = now
     eventBus.emit('logger', sensor)
-    // eventBus.emit('sparing', sensor)
+    eventBus.emit('sparing', sensor)
 })
