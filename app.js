@@ -61,7 +61,9 @@ const getMeterValue = async (id) => {
         if(id == 1) {
             try {
                 const val = await client.readHoldingRegisters(0, 4)
-                modbusChange.debit = val.buffer.swap16().readFloatLE(0).toFixed(4)
+                const raw = val.buffer.swap16().readFloatLE(0);
+                const cubicPerMinute = Number.isFinite(raw) ? raw / 60 : 0.0;
+                modbusChange.debit = cubicPerMinute.toFixed(4)
 
             } catch (error) {
                 modbusChange.debit = 0
